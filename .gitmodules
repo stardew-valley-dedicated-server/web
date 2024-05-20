@@ -1,0 +1,3 @@
+[submodule "asyncapi-generator-template-ts"]
+	path = sub_modules/asyncapi-generator-template-ts
+	url = git@github.com:stardew-valley-server/asyncapi-generator-template-ts.git

@@ -1,0 +1,39 @@
+{
+  "name": "nuxt-ui-pro-template-dashboard",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "api:generate": "bash scripts/api-generate.sh",
+    "api:docs:generate": "bash scripts/api-docs-generate.sh",
+    "api:docs:serve": "http-server ./.output/api/docs/ -p 3001",
+    "postinstall": "nuxt prepare && npm run api:generate"
+  },
+  "dependencies": {
+    "@asyncapi/generator": "^2.0.1",
+    "@asyncapi/generator-react-sdk": "^1.0.18",
+    "@asyncapi/modelina": "^3.4.9",
+    "@iconify-json/heroicons": "^1.1.21",
+    "@iconify-json/simple-icons": "^1.1.101",
+    "@nuxt/eslint": "^0.3.10",
+    "@nuxt/fonts": "^0.6.1",
+    "@nuxt/ui-pro": "^1.1.0",
+    "@unovis/ts": "^1.4.0",
+    "@unovis/vue": "^1.4.0",
+    "@vueuse/nuxt": "^10.9.0",
+    "date-fns": "^3.6.0",
+    "eslint": "^8.57.0",
+    "http-server": "^14.1.1",
+    "nuxt": "^3.11.2",
+    "sass": "^1.76.0",
+    "tsx": "^4.9.3",
+    "typescript": "^5.4.3",
+    "v-calendar": "^3.1.2",
+    "vue-tsc": "^2.0.15"
+  }
+}

@@ -1,0 +1,108 @@
+asyncapi: '3.0.0'
+
+info:
+  title: Stardew Dedicated Server
+  version: '1.0.0'
+  description: Lorem Ipsum
+
+channels:
+  root:
+    address: "room"
+    messages:
+      connected:
+        $ref: '#/components/messages/connected'
+      chat:
+        $ref: '#/components/messages/chat'
+      map:
+        $ref: '#/components/messages/map'
+
+operations:
+  init:
+    action: receive
+    summary: Triggered when joining the server.
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/connected'
+  updateMap:
+    action: receive
+    channel:
+      $ref: '#/channels/root'
+    messages:
+      - $ref: '#/channels/root/messages/map'
+    reply:
+      channel:
+        $ref: '#/channels/root'
+      messages:
+        - $ref: '#/channels/root/messages/chat'
+
+components:
+  messages:
+    connected:
+      summary: Data to initialize the client after first connection.
+      payload:
+        $ref: '#/components/schemas/connected'
+    map:
+      summary: Map data about one player.
+      payload:
+        $ref: '#/components/schemas/map'
+    chat:
+      summary: Chat message from one player.
+      payload:
+        $ref: '#/components/schemas/chat'
+
+  schemas:
+    debugInfo:
+      type: object
+      properties:
+        host:
+          type: string
+        started:
+          type: string
+        build_number:
+          type: integer
+        approximate_connection_time:
+          type: integer
+    connectionInfo:
+      type: object
+      properties:
+        app_id:
+          type: string
+        num_connections:
+          type: integer
+        debug_info:
+          $ref: '#/components/schemas/debugInfo'
+    connected:
+      type: object
+      properties:
+        msg:
+          type: string
+          description: A hello string confirming WebSocket connection
+        connection_info:
+          $ref: '#/components/schemas/connectionInfo'
+    map:
+      type: object
+      properties:
+        players:
+          type: array
+          items:
+            $ref: "#/components/schemas/player"
+    player:
+      type: object
+      properties:
+        uniqueMultiplayerID:
+          type: string
+        name:
+          type: string
+        position:
+          type: string
+        hairColor:
+          type: string
+        hairOffset:
+          type: string
+    chat:
+      type: object
+      properties:
+        data:
+          type: string
+          description: Message content
