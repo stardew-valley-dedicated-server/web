@@ -68,7 +68,8 @@
               maxWidth: 'unset',
               width: `${MAP_SIZE_ORIGINAL.width * 4}px`,
               height: `${MAP_SIZE_ORIGINAL.height * 4}px`,
-              imageRendering: 'pixelated'
+              imageRendering: 'pixelated',
+              aspectRatio: `${MAP_SIZE_ORIGINAL.width * 4} / ${MAP_SIZE_ORIGINAL.height * 4}`
             }"
             alt=""
             @load="loading = false"
@@ -80,10 +81,20 @@
 </template>
 
 <script setup lang="ts">
+// :style="{
+// maxWidth: 'unset',
+//   width: `100%`,
+//   imageRendering: 'pixelated',
+//   aspectRatio: `${MAP_SIZE_ORIGINAL.width * 4} / ${MAP_SIZE_ORIGINAL.height * 4}`
+// }"
+// aspectRatio: `${MAP_SIZE_ORIGINAL.width * 4} / ${MAP_SIZE_ORIGINAL.height * 4}`
+
 const MAP_SIZE_ORIGINAL = {
   width: 300,
   height: 180
 }
+
+const PATH_IMAGES = `/server/images/`
 
 const nuxtApp = useNuxtApp()
 
@@ -127,7 +138,7 @@ const form = reactive({
 const src = computed(() => {
   const appendRegion = `_${form.region}`
   const appendSeason = form.season !== 'spring' ? `_${form.season}` : ''
-  return `/server/images/region${appendRegion}${appendSeason}.png`
+  return `${PATH_IMAGES}region${appendRegion}${appendSeason}.png`
 })
 
 const history = ref<any[]>([])
@@ -139,7 +150,7 @@ if (import.meta.client) {
   })
 
   nuxtApp.$ws.on('MapMessage', (message) => {
-    mapData.value = message
+    mapData.value = message.data
   })
 }
 

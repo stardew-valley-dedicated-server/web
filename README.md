@@ -1,91 +1,55 @@
-![nuxt-ui-dashboard-social-card](https://github.com/nuxt-ui-pro/dashboard/assets/739984/f785284b-7db2-4732-af0e-2cb3c0bd7ca2)
+# Junimo Server - Web
 
-# Nuxt UI Pro - Dashboard template
+![Static Badge](https://img.shields.io/badge/Status-Not%20Stable-e05d44)
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
+The admin web interface for [Junimo Server](https://github.com/stardew-valley-server/server).
 
-- [Live demo](https://dashboard-template.nuxt.dev/)
-- [Play on Stackblitz](https://stackblitz.com/github/nuxt-ui-pro/dashboard)
-- [Documentation](https://ui.nuxt.com/pro/getting-started)
+> **Note:** The project is currently undergoing a rewrite, readme is expected to be incomplete or wrong.
+> 
+## Table of contents
+<!-- REGENRATE TOC: npm run readme:generate -->
+
+<!-- toc --> 
+
+- [Table of contents](#table-of-contents)
+- [Quick Start](#quick-start)
+- [Development](#development)
+- [Production](#production)
+- [TODO](#todo)
+  - [Replace admin template](#replace-admin-template)
+
+<!-- tocstop -->
 
 ## Quick Start
-
-```bash [Terminal]
-npx nuxi init -t github:nuxt-ui-pro/dashboard
-```
-
-## Setup
 
 Make sure to install the dependencies:
 
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Development
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
 # npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
 ## Production
 
-Build the application for production:
+Build the application for production and open a local preview with the production build:
 
 ```bash
 # npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## TODO
 
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+### Replace admin template
+* https://github.com/epicmaxco/vuestic-admin free and similar capabilities
+* https://ivanlu.dev/nuxt-js-integrating-with-novnc/ integrate vnc into web ui (https://github.com/novnc/noVNC/blob/7fcf9dcfe0cc5b14e3841a4429dc091a6ffca861/docs/EMBEDDING.md, https://github.com/TrumanGao/vue-vnc)

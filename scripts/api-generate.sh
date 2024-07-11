@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 INPUT_FILE="./asyncapi.yaml"
 OUTPUT_DIR="./.output/ws"

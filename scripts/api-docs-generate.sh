@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Windows compatibility: Escape the POSIX paths by prefixing with /
 # see https://stackoverflow.com/a/62513969

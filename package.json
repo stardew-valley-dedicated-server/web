@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-ui-pro-template-dashboard",
+  "name": "junimo-server-web",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,10 +9,10 @@
     "preview": "nuxt preview",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "api:generate": "bash scripts/api-generate.sh",
-    "api:docs:generate": "bash scripts/api-docs-generate.sh",
+    "api:generate": "sh ./scripts/api-generate.sh",
+    "api:docs:generate": "sh ./scripts/api-docs-generate.sh",
     "api:docs:serve": "http-server ./.output/api/docs/ -p 3001",
-    "postinstall": "nuxt prepare && npm run api:generate"
+    "postinstall": "nuxt prepare && echo $CWD && npm run api:generate"
   },
   "dependencies": {
     "@asyncapi/generator": "^2.0.1",
@@ -35,5 +35,8 @@
     "typescript": "^5.4.3",
     "v-calendar": "^3.1.2",
     "vue-tsc": "^2.0.15"
+  },
+  "devDependencies": {
+    "markdown-toc": "^1.2.0"
   }
 }
